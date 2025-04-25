@@ -24,23 +24,20 @@ seed_examples:
       and projects.  Fair-share calculations are based off the difference between what
       resources were promised and which resources were ultimately used.
     questions_and_answers:
-      - question: What is one of the responsibilities of an HPC batch system?
+      - question: What's one responsibility of an HPC batch system?
         answer: |-
-          An HPC batch system is responsible for generating and providing a complete set
-          of statistics for the jobs that are run and the resources that are consumed.
+          An HPC batch system generates and provides complete statistics
+          for jobs run and resources consumed.
       - question: |-
-          What kind of information can be obtained from the job records provided by an HPC
+          What information can be obtained from the job records provided by an HPC
           batch system?
         answer: |-
-          The job records provided by an HPC batch system include information about the
-          jobs that have run, the resources they ran on, and whether they ran successfully
-          to completion.
+          Job records should show what jobs ran, resources used, and completion status.
       - question: |-
-          Given the information about fair-share calculations, how are they typically
-          determined?
+          How are fair-share calculations determined?
         answer: |-
-          Fair-share calculations are based off the difference between what resources were
-          promised and which resources were ultimately used.
+          Fair-share calculations are based on differences
+          between promised and actually used resources.
   - context: |-
       This primer introduces the concepts of High Performance Computing, scheduling,
       and resource management.  It focuses first on the state of the art and then
@@ -50,25 +47,20 @@ seed_examples:
       enables and promotes a much broader and richer model that invites collaboration
       with areas whose requirements cannot be met in current systems.
     questions_and_answers:
-      - question: What are the main aspects addressed by the design of the Flux resource
-          manager?
+      - question: What main aspects does Flux's design address?
         answer: |-
-          The design of the Flux resource manager addresses the challenges of resource
-          management at a larger scale of systems and enables and promotes collaboration
-          with areas whose requirements cannot be met in current systems.
-      - question: Based on the information provided, why was the Flux resource manager
-          designed?
+          Flux addresses resource management at larger system scales and enables
+          collaboration with areas unmet by current systems.
+      - question: Why was Flux designed?
         answer: |-
           The Flux resource manager was designed to address the challenges of resource
           management at a larger scale of systems and to enable and promote collaboration
-          with areas whose requirements cannot be met in current systems.
+          with areas whose requirements are unmet in current systems.
       - question: How does Flux differ from traditional resource management approaches?
         answer: |-
-          Flux differs from traditional resource management approaches by  providing a
-          hierarchical, fully-nested framework where each job is a complete instance
-          of the framework, enabling more flexible resource allocation and customizable
-          scheduling policies at different levels.
-
+          Flux provides a hierarchical, fully-nested framework where each job
+          is a complete instance, allowing flexible resource allocation and
+          customizable scheduling policies.
   - context: |-
       The term High performance computing (HPC) as it is commonly used refers to a
       category of computing systems that combine computing power from multiple units
@@ -80,56 +72,21 @@ seed_examples:
       are distinguished from cloud services like AWS in that they generally provide a
       single operating system with a runtime environment managed by the facility.
     questions_and_answers:
-      - question: What is commonly understood by the term High performance computing
-          (HPC)?
+      - question: What's commonly understood by 'High performance computing'?
         answer: |-
-          High performance computing (HPC) refers to a category of computing systems that
-          combine computing power from multiple units to deliver vastly higher performance
-          than desktop computers.
-      - question: How does HPC differ from web servers and cloud services like AWS?
+          HPC refers to computing systems combining power from multiple units
+          for vastly higher performance than desktop computers.
+      - question: How does HPC differ from web servers and cloud services?
         answer: |-
-          HPC systems differ from web servers in that they dedicate requested resources to
-          run applications provided by users. They differ from cloud services like AWS in
-          that they generally provide a single operating system with a runtime environment
-          managed by the facility.
+          HPC dedicates resources to user applications, unlike web servers,
+          and provides a single facility-managed operating environment,
+          unlike cloud services.
       - question: |-
-          Given the description, why are HPC systems more suitable for solving complex
-          problems over extended periods compared to desktop computers or cloud services?
+          Why are HPC systems better for complex long-term problems?
         answer: |-
-          HPC systems are designed to run a variety of large applications for extended
-          periods of time in order to solve complex problems, making them more suitable
-          for such tasks compared to desktop computers or cloud services.
+          They're designed to run large applications for extended periods
+          to solve complex problems.
 # Flux 2018 ----------------------------------------------------------------------------------------------------
-  - context: "Our evaluation with three recent workflow efforts at LLNL shows that\
-      \ Flux\nsignificantly overcomes all of the stated challenges. Our performance\n\
-      measurements on synthetic and real ensemble-based workflows suggest that our\n\
-      hierarchical scheduling approach can improve the job throughput performance\
-      \ of\nthese workflows by 48 \xD7 . Further, our case study on the Cancer Moonshot\
-      \ Pilot2\nproject shows that Flux can efficiently co-schedule a new workflow\
-      \ that employs\nmachine learning to couple a large continuum model-based application\
-      \ with an\nensemble of thousands of MD simulations starting and stopping during\
-      \ a run at\nhigh speed. Finally, our integration with Merlin, a workflow management\
-      \ system\ndesigned to support next-generation machine learning on HPC, shows\
-      \ that Flux\nsignificantly enables not only co-scheduling of various task types\
-      \ within each\nensemble but also its needs for high portability and task communication\
-      \ and\ncoordination."
-    questions_and_answers:
-      - question: |-
-          How many times can Flux improve the job throughput performance of workflows
-          according to the performance measurements?
-        answer: "48"
-      - question: What are the main benefits of using Flux in the Cancer Moonshot
-          Pilot2 project?
-        answer: |-
-          Flux can efficiently co-schedule a new workflow that employs machine learning to
-          couple a large continuum model-based application with an ensemble of thousands
-          of MD simulations starting and stopping during a run at high speed.
-      - question: |-
-          Based on the integration with Merlin, what additional capabilities does Flux
-          enable for task communication and coordination?
-        answer: |-
-          Flux enables high portability and efficient co-scheduling of various task types
-          within each ensemble, enhancing task communication and coordination.
   - context: |-
       System-level solutions can be broken down into centralized, limited
       hierarchical, and decentralized schedulers. Centralized schedulers use a single,
@@ -143,22 +100,17 @@ seed_examples:
       of heterogeneous tasks [26], have limited APIs, and cannot be easily nested
       within other system schedulers.
     questions_and_answers:
-      - question: What is the scheduling model used by centralized schedulers?
+      - question: What scheduling model do centralized schedulers use?
         answer: |-
-          Centralized schedulers use a single, global scheduler that maintains and tracks
-          the full knowledge of jobs and resources to make scheduling decisions.
+          They use a single global scheduler tracking full knowledge of jobs and resources.
       - question: |-
-          Given the limitations of centralized schedulers, what type of scheduling model
-          might be more suitable for handling a large number of jobs and providing support
-          for co-scheduling of heterogeneous tasks?
+          What scheduling model suits high job volumes and heterogeneous tasks?
         answer: |-
-          A decentralized scheduling model might be more suitable as it can handle a large
-          number of jobs and provide support for co-scheduling of heterogeneous tasks.
-      - question: What are some limitations of centralized schedulers like SLURM, MOAB, LSF, and PBSPro?
+          A decentralized model would better handle many jobs and support co-scheduling heterogeneous tasks.
+      - question: What limits centralized schedulers like SLURM and LSF?
         answer: |-
-          Centralized schedulers are capped at tens of jobs/second, provide limited to no
-          support for co-scheduling of heterogeneous tasks, have limited APIs, and cannot
-          be easily nested within other system schedulers.
+          They're capped at tens of jobs/second, lack heterogeneous task co-scheduling, have limited APIs,
+          and can't nest in other schedulers.
   - context: |-
       Flux's user-driven, customizable approach to scheduling provides inherent
       support for co-scheduling. Flux's flexible design allows users to decide whether
@@ -172,20 +124,14 @@ seed_examples:
     questions_and_answers:
       - question: Does Flux support co-scheduling?
         answer: Yes, Flux supports co-scheduling.
-      - question: What are the key features of Flux's approach to scheduling and co-scheduling?
+      - question: What are Flux's key scheduling features?
         answer: |-
-          Flux's scheduling approach is user-driven and customizable, providing inherent
-          support for co-scheduling. It allows users to decide whether to configure co-
-          scheduling and choose their own scheduling policies. The job submission API
-          enables multiple tasks to coexist on a single node, regardless of their number,
-          type, or resource requirements, allowing for submission and tuning at various
-          levels of heterogeneity.
+          User-driven, customizable scheduling with co-scheduling support, user-chosen policies,
+          and job submission enabling multiple tasks regardless of type or requirements.
       - question: |-
-          Given Flux's support for co-scheduling and its flexible design, why might users
-          choose to use Flux for scheduling tasks on their nodes?
+          Why might users choose Flux for scheduling?
         answer: |-
-          Users might choose to use Flux for scheduling tasks because it allows for
-          efficient coexistence of several tasks on a single node without restrictions on
+          It allows for efficient coexistence of several tasks on a node without restrictions on
           their number, type, or resource requirements. This flexibility enables
           submission and tuning at all possible levels of heterogeneity within a node and
           across nodes, including individual cores, sets of cores, sockets, GPUs, or burst
@@ -207,28 +153,19 @@ seed_examples:
       types not yet devised.
     questions_and_answers:
       - question: |-
-          What are the main features of the Fluxion model that make it suitable for
-          converged computing environments, disaggregated systems, and complex and elastic
-          modern workflows?
+          What makes Fluxion suitable for converged computing?
         answer: |-
-          The Fluxion model is a directed-graph resource model with fully-hierarchical
-          scheduling and architectural separation of concerns, which allows it to schedule
-          virtually any resource types, including those not yet devised.
+          Its directed-graph resource model with hierarchical scheduling
+          and separation of concerns handles virtually any resource types.
       - question: |-
-          Given the features and capabilities of the Fluxion model, why is it well-suited
-          for future work involving scheduling environments with dynamic resources and
-          hierarchies?
+          Why is Fluxion well-suited for dynamic environments?
         answer: |-
-          The Fluxion model's features, such as its directed-graph resource model, fully-
-          hierarchical scheduling, and architectural separation of concerns, make it
-          adaptable and flexible, allowing it to handle dynamic resources and hierarchies
-          effectively.
-      - question: What is Fluxion and how does it relate to Flux?
+           Its adaptable, flexible directed-graph model with hierarchical
+           scheduling handles dynamic resources effectively.
+      - question: What is Fluxion's relation to Flux?
         answer: |-
-          Fluxion is Flux's graph-based scheduler component that implements a novel
-          resource model for HPC and converged computing scheduling. It was formerly
-          known as flux-sched and provides advanced batch scheduling capabilities to
-          the Flux framework.
+          Fluxion is Flux's graph-based scheduler component
+          implementing a novel resource model, formerly called flux-sched.
   - context: |-
       In this changing landscape, HPC resource managers and job schedulers relying on
       restrictive approaches to solve emerging problems create a technology gap. One
@@ -245,61 +182,18 @@ seed_examples:
       seamless scheduling across disaggregated resources or converged HPC and Cloud
       platforms [9, 28, 30].
     questions_and_answers:
-      - question: What kind of design do existing HPC schedulers use?
-        answer: Existing HPC schedulers use a node-centric or core-centric design.
+      - question: What design do existing HPC schedulers use?
+        answer: Node-centric or core-centric design.
       - question: |-
-          What are the limitations of the existing design of HPC schedulers in supporting
-          emerging HPC workloads?
+          What limits current HPC schedulers for emerging workloads?
         answer: |-
-          The existing design of HPC schedulers does not offer natural ways to express
-          resource relationships, cannot be used to represent complex resource constraints
-          or to capture elasticity that is inherent to modern workloads, and cannot be
-          extended easily to represent extremely heterogeneous resources or flow resources
-          such as power or network bandwidth. It also limits expressibility for seamless
-          scheduling across disaggregated resources or converged HPC and Cloud platforms.
+          They can't express resource relationships, represent complex constraints,
+          capture elasticity, extend to heterogeneous resources, or schedule across platforms.
       - question: |-
-          Given the limitations of the existing node-centric or core-centric design of HPC
-          schedulers, what kind of design might be more suitable for supporting emerging
-          HPC workloads?
+          What design better supports emerging HPC workloads?
         answer: |-
-          A design that offers natural ways to express resource relationships, can
-          represent complex resource constraints and capture elasticity, can be extended
-          to represent heterogeneous resources and flow resources, and can facilitate
-          seamless scheduling across disaggregated resources or converged HPC and Cloud
-          platforms would be more suitable for supporting emerging HPC workloads.
-  - context: |-
-      Our resource model must also provide efficient time management : it must keep
-      track of the state changes of resources over time in support of various queuing,
-      reservation, and backfilling policies [15]. The model accomplishes this by
-      directly integrating a highly efficient resource-time state tracking and search
-      mechanism into each vertex, called Planner , (Step (6), Section 4.1). Even after
-      we judiciously choose the right levels of detail for our resource graph store,
-      the matching process for allocations requires further optimization. Thus,
-      Fluxion utilizes pruning filters for scalability, as shown at Step (6). Pruning
-      filters are installed at higher-level resource vertices (such as compute-rack-
-      level vertices) to keep track of the aggregate amounts of available lower-level
-      resources (e.g., individual cores). Fluxion also introduces a novel Scheduler-
-      Driven Filter Update (SDFU) algorithm (Step (5)) to update these filters.
-      Finally, once Fluxion determines the best matching resource subgraph, it is
-      emitted as a selected resource set at (7), which can then be allocated to the
-      user for their application by the underlying RM. The RM can then make use of
-      this resource set to contain, bind and execute the target program(s) within
-      those resources.
-    questions_and_answers:
-      - question: |-
-          What is the name of the mechanism integrated into each vertex for efficient time
-          management?
-        answer: Planner
-      - question: What are the three methods Fluxion uses to optimize resource allocation?
-        answer: |-
-          Fluxion uses pruning filters for scalability, a Scheduler-Driven Filter Update
-          (SDFU) algorithm to update these filters, and it emits the best matching
-          resource subgraph as a selected resource set for allocation.
-      - question: Given the information provided, why does Fluxion introduce the SDFU
-          algorithm?
-        answer: |-
-          Fluxion introduces the SDFU algorithm to update the pruning filters that keep
-          track of the aggregate amounts of available lower-level resources.
+          One expressing resource relationships, representing complex constraints,
+          capturing elasticity, and scheduling across disaggregated resources or converged platforms.
 # Flux FAQ ----------------------------------------------------------------------------------------------------
   - context: |-
       Flux is a new resource manager and job scheduler for high-performance computing
@@ -308,21 +202,16 @@ seed_examples:
     questions_and_answers:
       - question: What is Flux?
         answer: |-
-          Flux is a new resource manager and job scheduler for high-performance computing
-          (HPC) systems. It is designed to be flexible, scalable, and efficient, addressing
-          the challenges of modern HPC workloads and enabling new use cases.
-      - question: What are the main goals of Flux?
+          A new resource manager and job scheduler for HPC systems designed for
+          flexibility, scalability, and efficiency.
+      - question: What are Flux's main goals?
         answer: |-
-          The main goals of Flux are to provide a flexible and scalable resource management
-          solution for HPC systems, address the challenges of modern HPC workloads, and
-          enable new use cases.
+          Provide flexible, scalable resource management for HPC, address modern workload challenges, and enable new use cases.
       - question: |-
-          What is Flux's approach to resource allocation?
+          What's Flux's resource allocation approach?
         answer: |-
-          Flux's approach to resource allocation uses hierarchical, multi-level management
-          and scheduling schemes with a graph-based resource model. This enables more
-          sophisticated scheduling of resources beyond the traditional node-centric view,
-          including consideration of networks, I/O, and power interconnections.
+          Hierarchical, multi-level management with graph-based resource model,
+          enabling sophisticated scheduling beyond node-centric views.
 # Flux Operator ----------------------------------------------------------------------------------------------------
   - context: |-
       This paper introduces the Flux Operator, 19 the next step in work to explore
@@ -343,24 +232,16 @@ seed_examples:
     questions_and_answers:
       - question: What is the Flux Operator?
         answer: |-
-          The Flux Operator is a Kubernetes operator that handles the setup and
-          configuration of a fully fledged Flux cluster inside of Kubernetes itself,
-          allowing the user to efficiently bring up and down an entire HPC cluster for a
-          scoped set of work that optimizes for important aspects of HPC.
-      - question: What are the main sections discussed in the paper?
+          A Kubernetes operator handling setup and configuration of complete Flux clusters
+          in Kubernetes for efficiently managing HPC workloads.
+      - question: What are the main sections in the Flux Operator paper?
         answer: |-
-          The paper discusses the design and architecture of the Flux Operator in Section
-          2, the impact of design decisions on workflows like MPI and experimental
-          features in Section 4, and presents experimental work in Section 3. The paper
-          also concludes with discussion for future work, considerations for workflow
-          design, and vision for the future in Section 5.
+          That paper discusses the design and architecture, impact on workflows and features,
+          expirimental and future work of the Flux Operator.
       - question: |-
-          Based on the information provided, how does the Flux Operator enhance
-          performance compared to the MPI Operator?
+          How does the Flux Operator compare to the MPI Operator?
         answer: |-
-          The Flux Operator enables superior performance for a well-known HPC application
-          over the MPI Operator, the primary available option at the time for running MPI
-          workflows.
+          It enables superior performance for well-known HPC applications.
   - context: |-
       The popularity and economic clout behind cloud computing presents a challenge
       for the high performance computing community -to resist new paradigms of cloud-
@@ -393,47 +274,19 @@ seed_examples:
       better future, and stronger more reproducible science.
     questions_and_answers:
       - question: |-
-          What fundamental challenge does cloud computing present to the high performance
-          computing (HPC)community?
+          What challenge does cloud computing present to HPC?
         answer: |-
-          Cloud computing presents the HPC community with a fundamental dilemma: either
-          resist new cloud-native paradigms and risk falling behind (losing talent and
-          scientists), or embrace these technologies as opportunities for innovation and
-          growth. The Flux Operator paper strongly advocates for the latter approach, termed "converged
-          computing," which seeks to integrate the strengths of both HPC and cloud
-          technologies. The Flux Operator project represents an early implementation of
-          this philosophy by integrating the Flux Framework (an HPC workload manager)
-          with Kubernetes (a cloud orchestration framework), demonstrating superior
-          performance compared to traditional approaches.
+          Either resist cloud-native paradigms and fall behind or embrace them as innovation opportunities.
       - question: |-
-          What specific technical and organizational challenges must the converged
-          computing movement address to succeed, and why are these challenges significant?
+          What challenges must converged computing address?
         answer: |-
-          The converged computing movement must faces multiple interconnected challenges.
-          These include: 1) Technical challenges such as storage, multi-tenancy,
-          and cost estimation, which are critical for seamless integration between
-          cloud and HPC environments; 2) Organizational challenges of building
-          collaborative teams spanning traditionally separate HPC and cloud communities;
-          and 3) Cultural challenges in reconciling the performance-first
-          mindset of HPC with the flexibility-oriented approach of cloud computing.
-          These challenges are significant because addressing them requires fundamental
-          rethinking of both technologies and organizational structures rather than
-          iterative adaptations.
+          Technical challenges (storage, multi-tenancy, cost), organizational collaboration between communities,
+          and cultural reconciliation of performance vs. flexibility.
       - question: |-
-          Why is converged computing a paradigm shift, and
-          what does this imply for the future of scientific computing?
+          Why is converged computing a paradigm shift?
         answer: |-
-          Converged computing is a paradigm shift because it fundamentally
-          reimagines the relationship between HPC and cloud computing - not
-          as competing approaches, but as complementary technologies that can be
-          integrated to create systems greater than the sum of their parts. This shift
-          implies a transformative future for scientific computing where researchers
-          benefit simultaneously from the performance characteristics of HPC and the
-          flexibility, accessibility, and resource efficiency of cloud computing. The
-          authors envision this convergence leading to "stronger more reproducible
-          science" by combining the computational power needed for complex simulations
-          with the containerization, orchestration, and collaboration tools that have
-          revolutionized software development in cloud environments.
+          It reimagines HPC and cloud as complementary technologies,
+          transforming scientific computing with combined performance and flexibility.
   - context: |-
       Running a single MiniCluster to create an isolated Flux cluster in Kubernetes is
       an initial step, but it is insufficient for realworld use cases of complex
@@ -445,30 +298,17 @@ seed_examples:
       first-class citizen into workflow tools in future work.
     questions_and_answers:
       - question: |-
-          What is the current insufficiency of running a single MiniCluster for real-world
-          use cases?
+          Why is a single MiniCluster insufficient for real use?
         answer: |-
-          The current MiniCluster setup is insufficient for real-world use cases of
-          complex workflows due to its isolation and lack of support for features needed
-          for heterogeneous workflows with different sizes or configurations of
-          MiniClusters.
+          It lacks support for complex, heterogeneous workflows requiring different MiniCluster sizes or configurations.
       - question: |-
-          What are the potential improvements being considered for MiniCluster integration
-          in workflow tools?
+          What improvements are planned for MiniCluster?
         answer: |-
-          The potential improvements being considered for MiniCluster integration in
-          workflow tools include integrating the MiniCluster custom resource definition as
-          a first-class citizen, which would enable features needed for complex,
-          heterogeneous workflows with different sizes or configurations of MiniClusters.
+          Integrating MiniCluster custom resource definition as first-class citizen in workflow tools.
       - question: |-
-          Given the current limitations of a single MiniCluster, why would integrating the
-          MiniCluster custom resource definition as a first-class citizen into workflow
-          tools be a beneficial approach for real-world use cases?
+          When would MiniCluster integration be beneficial?
         answer: |-
-          Integrating the MiniCluster custom resource definition as a first-class citizen
-          into workflow tools would enable features needed for complex, heterogeneous
-          workflows with different sizes or configurations of MiniClusters, addressing the
-          current limitations of a single MiniCluster.
+          It would enable features needed for complex, heterogeneous workflows with varied sizes and configurations.
   - context: |-
       To complete the early work in autoscaling, we considered the concept of
       bursting, 33 which means not just extending the size of a local cluster, but
@@ -480,27 +320,20 @@ seed_examples:
       Service (EKS).
     questions_and_answers:
       - question: |-
-          What are the two examples of external resources that a Kubernetes cluster
+          What are examples of resources that a Kubernetes cluster
           running on Google Cloud might burst to?
         answer: |-
-          The two examples of external resources that a Kubernetes cluster running on
-          Google Cloud might burst to are a cluster running on Compute Engine (CE), or to
-          a cluster on Amazon Elastic Kubernetes Service (EKS).
+          Google Compute Engine or Amazon Elastic Kubernetes Service.
       - question: |-
-          What are the key benefits of implementing bursting capability in Flux for HPC workflows?
+          What benefits does Flux bursting provide?
         answer: |-
-          Key benefits of implementing bursting capability in Flux include improved resource
-          utilization, cost optimization through using external resources only when needed,
-          handling workload spikes without maintaining permanent infrastructure, and enabling
-          workload portability across different cloud providers and on-premises resources.
+          Improved resource use, cost optimization,
+          workload spike handling, and cross-provider portability.
       - question: |-
-          What technical challenges must be addressed for effective implementation of bursting in Flux?
+          What technical challenges does Flux bursting face?
         answer: |-
-          Effective implementation of bursting in Flux requires addressing challenges such as
-          maintaining secure network connectivity between clusters, handling network latency
-          between distributed resources, managing consistent data access across environments,
-          ensuring broker synchronization, and accommodating different resource policies and
-          constraints across cluster boundaries.
+          Secure connectivity, network latency, data access,
+          broker synchronization, and cross-cluster policy management.
   - context: |-
       The first requirement for using the Flux Operator is access to a Kubernetes
       cluster with sufficient permission to deploy each of the abstractions discussed
@@ -520,40 +353,17 @@ seed_examples:
       discussed in Section 4. The final Flux MiniCluster is illustrated in Figure 1.
     questions_and_answers:
       - question: |-
-          What is the name of the command line tool used to deploy objects with the Flux
-          Operator, and what is its role in the deployment process?
+          WWhat tool deploys Flux Operator objects?
         answer: |-
-          The command line tool used to deploy objects with the Flux Operator is kubectl,
-          the standard Kubernetes command-line interface. In the Flux Operator deployment
-          process, kubectl serves two critical functions: first, it's used to deploy the
-          core Kubernetes objects (Deployments, Services, Jobs, and ConfigMaps) required
-          by the operator; second, it's used to deploy the MiniCluster Custom Resource
-          Definition (CRD) itself, which triggers the operator's reconciliation loop to
-          create the desired Flux environment.
+          kubectl, the standard Kubernetes command-line interface
+          for deploying objects and the MiniCluster CRD.
       - question: |-
-          What are the main Kubernetes objects that the Flux Operator deploys, and how do
-          they work together?
+          What Kubernetes objects does Flux Operator deploy?
         answer: |-
-          The Flux Operator deploys an integrated set of Kubernetes objects that work
-          together to create a functioning HPC environment: 1) The MiniCluster Custom
-          Resource Definition (CRD) which defines the desired state; 2) An indexed Job
-          that creates a scalable set of pods forming the compute cluster; 3) Pod
-          containers, each running a Flux broker with associated configuration volumes for
-          state management; 4) A Headless Service that provides the critical network
-          mesh connecting all brokers; and 5) Supporting ConfigMaps and optional Secrets
-          for configuration data. This architecture enables Flux's hierarchical scheduling
-          capabilities while leveraging Kubernetes' orchestration features.
+          MiniCluster CRD, indexed Job with pods, Flux brokers with
+          configuration volumes, and Headless Service network.
       - question: |-
-          what are the primary use cases and advantages of deploying
-          a Flux MiniCluster in Kubernetes?
+          What are the main Flux MiniCluster use cases?
         answer: |-
-          The Flux MiniCluster offers two operational modes with distinct advantages:
-          1) Ephemeral batch mode, where it efficiently executes a specific HPC workload
-          or command and automatically cleans up resources afterward, ideal for pipeline
-          integration; and 2) Interactive cluster mode, which provides a persistent HPC
-          environment within Kubernetes for iterative scientific workflows, development,
-          or complex multi-stage computations. Key advantages include the customizability
-          of cluster attributes (size, application image, commands) through simple YAML
-          configuration, superior performance for HPC workloads compared to alternatives
-          like the MPI Operator, and the convergence of cloud-native orchestration with
-          HPC-specific resource management capabilities.
+          Ephemeral batch mode for specific workloads and
+          interactive cluster mode for persistent environments, both customizable via YAML.
