@@ -1,3 +1,17 @@
+version: 3
+domain: Schedulers
+created_by: kush-gupt
+document_outline: |
+  Overview of the Flux scheduler, explaining what it is, how
+  they came to be, and the relationship with High Performance
+  Computing and cloud native technologies.
+
+document:
+  repo: https://github.com/kush-gupt/taxonomy-knowledge-docs.git
+  commit: 0ca22206147a71ddf852df4c745176e3a2fe23bf
+  patterns:
+    - '*.pdf'
+
 # Flux 2014 Starter ----------------------------------------------------------------------------------------------------
 seed_examples:
   - context: |-
@@ -50,7 +64,7 @@ seed_examples:
           with areas whose requirements cannot be met in current systems.
       - question: How does Flux differ from traditional resource management approaches?
         answer: |-
-          Flux differs from traditional resource management approaches by  providing a 
+          Flux differs from traditional resource management approaches by  providing a
           hierarchical, fully-nested framework where each job is a complete instance
           of the framework, enabling more flexible resource allocation and customizable
           scheduling policies at different levels.
@@ -116,30 +130,6 @@ seed_examples:
         answer: |-
           Flux enables high portability and efficient co-scheduling of various task types
           within each ensemble, enhancing task communication and coordination.
-  - context: |-
-      Overall, this workflow exemplifies the many (co-)scheduling and execution
-      challenges faced by emerging workflows. They include co-scheduling of coupled
-      simulations at different scales (i.e., continuum models-based simulations with
-      several thousand MD simulations, coordination between CPU and GPU runs), the use
-      of a machine learning module to schedule (or de-schedule) and execute
-      simulations dynamically at a high rate, and the use of data store to coordinate
-      the data flow between different tasks. We will further characterize the key
-      scheduling and execution challenges such as the ones shown in the Cancer
-      Moonshot Pilot2 workflow in the next section.
-    questions_and_answers:
-      - question: What is one of the challenges faced by emerging workflows?
-        answer: |-
-          One challenge faced by emerging workflows is the co-scheduling of coupled
-          simulations at different scales.
-      - question: |-
-          What are some of the key scheduling and execution challenges faced by the Cancer
-          Moonshot Pilot2 workflow?
-        answer: |-
-          The key scheduling and execution challenges faced by the Cancer Moonshot Pilot2
-          workflow include co-scheduling of coupled simulations at different scales,
-          coordination between CPU and GPU runs, use of a machine learning module to
-          schedule simulations dynamically, and coordination of data flow between
-          different tasks using a data store.
   - context: |-
       System-level solutions can be broken down into centralized, limited
       hierarchical, and decentralized schedulers. Centralized schedulers use a single,
@@ -235,9 +225,9 @@ seed_examples:
           effectively.
       - question: What is Fluxion and how does it relate to Flux?
         answer: |-
-          Fluxion is Flux's graph-based scheduler component that implements a novel 
-          resource model for HPC and converged computing scheduling. It was formerly 
-          known as flux-sched and provides advanced batch scheduling capabilities to 
+          Fluxion is Flux's graph-based scheduler component that implements a novel
+          resource model for HPC and converged computing scheduling. It was formerly
+          known as flux-sched and provides advanced batch scheduling capabilities to
           the Flux framework.
   - context: |-
       In this changing landscape, HPC resource managers and job schedulers relying on
@@ -329,8 +319,10 @@ seed_examples:
       - question: |-
           What is Flux's approach to resource allocation?
         answer: |-
-
-  - context: |-
+          Flux's approach to resource allocation uses hierarchical, multi-level management
+          and scheduling schemes with a graph-based resource model. This enables more
+          sophisticated scheduling of resources beyond the traditional node-centric view,
+          including consideration of networks, I/O, and power interconnections.
 # Flux Operator ----------------------------------------------------------------------------------------------------
   - context: |-
       This paper introduces the Flux Operator, 19 the next step in work to explore
@@ -401,11 +393,47 @@ seed_examples:
       better future, and stronger more reproducible science.
     questions_and_answers:
       - question: |-
-          Based on the information provided, what are some of the potential challenges
-          that the converged computing movement might face?
+          What fundamental challenge does cloud computing present to the high performance
+          computing (HPC)community?
         answer: |-
-          Some potential challenges that the converged computing movement might face
-          include storage, tenancy, and cost-estimation.
+          Cloud computing presents the HPC community with a fundamental dilemma: either
+          resist new cloud-native paradigms and risk falling behind (losing talent and
+          scientists), or embrace these technologies as opportunities for innovation and
+          growth. The Flux Operator paper strongly advocates for the latter approach, termed "converged
+          computing," which seeks to integrate the strengths of both HPC and cloud
+          technologies. The Flux Operator project represents an early implementation of
+          this philosophy by integrating the Flux Framework (an HPC workload manager)
+          with Kubernetes (a cloud orchestration framework), demonstrating superior
+          performance compared to traditional approaches.
+      - question: |-
+          What specific technical and organizational challenges must the converged
+          computing movement address to succeed, and why are these challenges significant?
+        answer: |-
+          The converged computing movement must faces multiple interconnected challenges.
+          These include: 1) Technical challenges such as storage, multi-tenancy,
+          and cost estimation, which are critical for seamless integration between
+          cloud and HPC environments; 2) Organizational challenges of building
+          collaborative teams spanning traditionally separate HPC and cloud communities;
+          and 3) Cultural challenges in reconciling the performance-first
+          mindset of HPC with the flexibility-oriented approach of cloud computing.
+          These challenges are significant because addressing them requires fundamental
+          rethinking of both technologies and organizational structures rather than
+          iterative adaptations.
+      - question: |-
+          Why is converged computing a paradigm shift, and
+          what does this imply for the future of scientific computing?
+        answer: |-
+          Converged computing is a paradigm shift because it fundamentally
+          reimagines the relationship between HPC and cloud computing - not
+          as competing approaches, but as complementary technologies that can be
+          integrated to create systems greater than the sum of their parts. This shift
+          implies a transformative future for scientific computing where researchers
+          benefit simultaneously from the performance characteristics of HPC and the
+          flexibility, accessibility, and resource efficiency of cloud computing. The
+          authors envision this convergence leading to "stronger more reproducible
+          science" by combining the computational power needed for complex simulations
+          with the containerization, orchestration, and collaboration tools that have
+          revolutionized software development in cloud environments.
   - context: |-
       Running a single MiniCluster to create an isolated Flux cluster in Kubernetes is
       an initial step, but it is insufficient for realworld use cases of complex
@@ -461,17 +489,17 @@ seed_examples:
       - question: |-
           What are the key benefits of implementing bursting capability in Flux for HPC workflows?
         answer: |-
-          Key benefits of implementing bursting capability in Flux include improved resource 
-          utilization, cost optimization through using external resources only when needed, 
-          handling workload spikes without maintaining permanent infrastructure, and enabling 
+          Key benefits of implementing bursting capability in Flux include improved resource
+          utilization, cost optimization through using external resources only when needed,
+          handling workload spikes without maintaining permanent infrastructure, and enabling
           workload portability across different cloud providers and on-premises resources.
       - question: |-
           What technical challenges must be addressed for effective implementation of bursting in Flux?
         answer: |-
-          Effective implementation of bursting in Flux requires addressing challenges such as 
-          maintaining secure network connectivity between clusters, handling network latency 
-          between distributed resources, managing consistent data access across environments, 
-          ensuring broker synchronization, and accommodating different resource policies and 
+          Effective implementation of bursting in Flux requires addressing challenges such as
+          maintaining secure network connectivity between clusters, handling network latency
+          between distributed resources, managing consistent data access across environments,
+          ensuring broker synchronization, and accommodating different resource policies and
           constraints across cluster boundaries.
   - context: |-
       The first requirement for using the Flux Operator is access to a Kubernetes
@@ -495,37 +523,37 @@ seed_examples:
           What is the name of the command line tool used to deploy objects with the Flux
           Operator, and what is its role in the deployment process?
         answer: |-
-          The command line tool used to deploy objects with the Flux Operator is kubectl, 
-          the standard Kubernetes command-line interface. In the Flux Operator deployment 
-          process, kubectl serves two critical functions: first, it's used to deploy the 
-          core Kubernetes objects (Deployments, Services, Jobs, and ConfigMaps) required 
-          by the operator; second, it's used to deploy the MiniCluster Custom Resource 
-          Definition (CRD) itself, which triggers the operator's reconciliation loop to 
+          The command line tool used to deploy objects with the Flux Operator is kubectl,
+          the standard Kubernetes command-line interface. In the Flux Operator deployment
+          process, kubectl serves two critical functions: first, it's used to deploy the
+          core Kubernetes objects (Deployments, Services, Jobs, and ConfigMaps) required
+          by the operator; second, it's used to deploy the MiniCluster Custom Resource
+          Definition (CRD) itself, which triggers the operator's reconciliation loop to
           create the desired Flux environment.
       - question: |-
           What are the main Kubernetes objects that the Flux Operator deploys, and how do
           they work together?
         answer: |-
-          The Flux Operator deploys an integrated set of Kubernetes objects that work 
-          together to create a functioning HPC environment: 1) The MiniCluster Custom 
-          Resource Definition (CRD) which defines the desired state; 2) An indexed Job 
-          that creates a scalable set of pods forming the compute cluster; 3) Pod 
-          containers, each running a Flux broker with associated configuration volumes for 
-          state management; 4) A Headless Service that provides the critical network 
-          mesh connecting all brokers; and 5) Supporting ConfigMaps and optional Secrets 
-          for configuration data. This architecture enables Flux's hierarchical scheduling 
+          The Flux Operator deploys an integrated set of Kubernetes objects that work
+          together to create a functioning HPC environment: 1) The MiniCluster Custom
+          Resource Definition (CRD) which defines the desired state; 2) An indexed Job
+          that creates a scalable set of pods forming the compute cluster; 3) Pod
+          containers, each running a Flux broker with associated configuration volumes for
+          state management; 4) A Headless Service that provides the critical network
+          mesh connecting all brokers; and 5) Supporting ConfigMaps and optional Secrets
+          for configuration data. This architecture enables Flux's hierarchical scheduling
           capabilities while leveraging Kubernetes' orchestration features.
       - question: |-
-          what are the primary use cases and advantages of deploying 
+          what are the primary use cases and advantages of deploying
           a Flux MiniCluster in Kubernetes?
         answer: |-
-          The Flux MiniCluster offers two operational modes with distinct advantages: 
-          1) Ephemeral batch mode, where it efficiently executes a specific HPC workload 
-          or command and automatically cleans up resources afterward, ideal for pipeline 
-          integration; and 2) Interactive cluster mode, which provides a persistent HPC 
-          environment within Kubernetes for iterative scientific workflows, development, 
-          or complex multi-stage computations. Key advantages include the customizability 
-          of cluster attributes (size, application image, commands) through simple YAML 
-          configuration, superior performance for HPC workloads compared to alternatives 
-          like the MPI Operator, and the convergence of cloud-native orchestration with 
+          The Flux MiniCluster offers two operational modes with distinct advantages:
+          1) Ephemeral batch mode, where it efficiently executes a specific HPC workload
+          or command and automatically cleans up resources afterward, ideal for pipeline
+          integration; and 2) Interactive cluster mode, which provides a persistent HPC
+          environment within Kubernetes for iterative scientific workflows, development,
+          or complex multi-stage computations. Key advantages include the customizability
+          of cluster attributes (size, application image, commands) through simple YAML
+          configuration, superior performance for HPC workloads compared to alternatives
+          like the MPI Operator, and the convergence of cloud-native orchestration with
           HPC-specific resource management capabilities.
