@@ -1,5 +1,5 @@
 version: 3
-domain: Schedulers
+domain: Scheduling
 created_by: kush-gupt
 document_outline: |
   Overview of the Flux scheduler, explaining what it is, how
