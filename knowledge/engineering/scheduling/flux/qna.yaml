@@ -8,7 +8,7 @@ document_outline: |
 
 document:
   repo: https://github.com/kush-gupt/taxonomy-knowledge-docs.git
-  commit: 0ca22206147a71ddf852df4c745176e3a2fe23bf
+  commit: 96f6517a5abe0255c237e942f6e4cbdcbf99e51c
   patterns:
     - '*.pdf'
 
